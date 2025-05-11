@@ -9,8 +9,8 @@ public class InstrutorModel extends UsuarioModel {
 
     public InstrutorModel() {super();}
     
-    public InstrutorModel(String nome, int idade, String email, String senha, String tipoDeUsuario , String especialidade, ArrayList<AulaModel> aulasMinistradas) {
-        super(nome, idade, email, senha, tipoDeUsuario);
+    public InstrutorModel(String id, String nome, int idade, String email, String senha, String tipoDeUsuario , String especialidade, ArrayList<AulaModel> aulasMinistradas) {
+        super(id, nome, idade, email, senha, tipoDeUsuario);
         this.tipoDeUsuario = "Instrutor"; // Define o tipo de usuário como "Instrutor"
         this.especialidade = especialidade;
         this.aulasMinistradas = aulasMinistradas;

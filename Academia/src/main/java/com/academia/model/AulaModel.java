@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 @Document(collection = "Aulas")
 public class AulaModel {
     @Id
+    protected String id;
     protected String tipo;
     protected LocalDateTime horario;
     protected InstrutorModel instrutor;
@@ -16,7 +17,8 @@ public class AulaModel {
 
     public AulaModel() {}
 
-    public AulaModel(String tipo, LocalDateTime horario, InstrutorModel instrutor, int limiteAlunos, List<AlunoModel> alunosMatriculados  ,String status) {
+    public AulaModel(String id, String tipo, LocalDateTime horario, InstrutorModel instrutor, int limiteAlunos, List<AlunoModel> alunosMatriculados, String status) {
+        this.id = id;
         this.tipo = tipo;
         this.horario = horario;
         this.instrutor = instrutor;
@@ -25,7 +27,8 @@ public class AulaModel {
         this.status = status;
     }
 
-    //Getters       
+    //Getters
+    public String getId() {return id;}       
     public String getTipo() {return tipo;}
     public LocalDateTime getHorario() {return horario;}
     public InstrutorModel getInstrutor() {return instrutor;}
@@ -34,11 +37,12 @@ public class AulaModel {
     public String getStatus() {return status;}
 
     //Setters
+    public void setId(String id) {this.id = id;}
     public void setTipo(String tipo) {this.tipo = tipo;}
     public void setHorario(LocalDateTime horario) {this.horario = horario;}
     public void setInstrutor(InstrutorModel instrutor) {this.instrutor = instrutor;}
     public void setLimiteAlunos(int limiteAlunos) {this.limiteAlunos = limiteAlunos;}
     public void setAlunosMatriculados(List<AlunoModel> alunosMatriculados) {this.alunosMatriculados = alunosMatriculados;}
     public void setStatus(String status) {this.status = status;}
-    
+        
 }

@@ -14,8 +14,8 @@ public class AlunoModel extends UsuarioModel {
 
     public AlunoModel() {super();}
     
-    public AlunoModel(String nome, int idade, String email, String senha, String tipoDeUsuario, TipoDePlano tipoDePlano, LocalDateTime dataInicioDePlano, LocalDate dataFimPlano,List<AulaModel> aulasMatriculadas) {
-        super(nome, idade, email, senha, tipoDeUsuario);
+    public AlunoModel(String id, String nome, int idade, String email, String senha, String tipoDeUsuario, TipoDePlano tipoDePlano, LocalDateTime dataInicioDePlano, LocalDate dataFimPlano,List<AulaModel> aulasMatriculadas) {
+        super(id, nome, idade, email, senha, tipoDeUsuario);
         this.tipoDeUsuario = "Aluno"; // Define o tipo de usuário como "Aluno"
         this.tipoDePlano = tipoDePlano;
         this.dataInicioDePlano = dataInicioDePlano;
