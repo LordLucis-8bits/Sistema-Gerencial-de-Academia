@@ -1,4 +1,4 @@
-package com.academia.model;
+package com.academia.enums;
 
 public enum TipoDePlano {
     DIARIO,

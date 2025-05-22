@@ -1,5 +1,6 @@
 package com.academia.model;
 import org.springframework.data.mongodb.core.mapping.Document;
+import com.academia.enums.TipoDeUsuario;
 import java.util.ArrayList;
 
 @Document(collection = "Instrutores")
@@ -9,9 +10,9 @@ public class InstrutorModel extends UsuarioModel {
 
     public InstrutorModel() {super();}
     
-    public InstrutorModel(String id, String nome, int idade, String email, String senha, String tipoDeUsuario , String especialidade, ArrayList<AulaModel> aulasMinistradas) {
+    public InstrutorModel(String id, String nome, int idade, String email, String senha, TipoDeUsuario tipoDeUsuario , String especialidade, ArrayList<AulaModel> aulasMinistradas) {
         super(id, nome, idade, email, senha, tipoDeUsuario);
-        this.tipoDeUsuario = "Instrutor"; // Define o tipo de usuário como "Instrutor"
+        this.tipoDeUsuario = TipoDeUsuario.INSTRUTOR; // Define o tipo de usuário como "Instrutor"
         this.especialidade = especialidade;
         this.aulasMinistradas = aulasMinistradas;
     }

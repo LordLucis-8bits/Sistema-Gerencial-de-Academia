@@ -1,6 +1,7 @@
 package com.academia.repository;
+import com.academia.enums.TipoDePlano;
 import com.academia.model.AlunoModel;
-import com.academia.model.TipoDePlano;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;

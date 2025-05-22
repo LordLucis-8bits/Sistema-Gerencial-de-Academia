@@ -1,20 +1,21 @@
 package com.academia.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import com.academia.enums.TipoDeUsuario;
 
 @Document(collection = "Usuarios")
 public abstract class UsuarioModel {
     @Id
-    protected String id;
-    protected String nome;
-    protected int idade;
-    protected String email;
-    protected String senha;
-    protected String tipoDeUsuario; // Pode ser "Aluno", "Instrutor" ou "Administrador"     
+    private String id;
+    private String nome;
+    private int idade;
+    private String email;
+    private String senha;
+    protected TipoDeUsuario tipoDeUsuario; // Pode ser "Aluno", "Instrutor" ou "Administrador"     
 
     public UsuarioModel() {}
 
-    public UsuarioModel(String id, String nome, int idade, String email, String senha, String tipoDeUsuario) {
+    public UsuarioModel(String id, String nome, int idade, String email, String senha, TipoDeUsuario tipoDeUsuario) {
         this.id = id;
         this.nome = nome;
         this.idade = idade;
@@ -29,7 +30,7 @@ public abstract class UsuarioModel {
     public int getIdade() {return idade;}
     public String getEmail() {return email;}
     public String getSenha() {return senha;}
-    public String getTipoDeUsuario() {return tipoDeUsuario;}
+    public TipoDeUsuario getTipoDeUsuario() {return tipoDeUsuario;}
 
     //Setters
     public void setId(String id) {this.id = id;}
@@ -37,7 +38,7 @@ public abstract class UsuarioModel {
     public void setIdade(int idade) {this.idade = idade;}
     public void setEmail(String email) {this.email = email;}
     public void setSenha(String senha) {this.senha = senha;}
-    public void setTipoDeUsuario(String tipoDeUsuario) {this.tipoDeUsuario = tipoDeUsuario;}
+    public void setTipoDeUsuario(TipoDeUsuario tipoDeUsuario) {this.tipoDeUsuario = tipoDeUsuario;}
 
     //Metodo de Autenticação
     public boolean autenticar(String email, String senha) {

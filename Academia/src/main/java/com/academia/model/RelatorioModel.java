@@ -4,15 +4,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDate;
 import java.util.List;
 
-
 @Document(collection = "Relatorios")
 public class RelatorioModel {
     @Id
-    protected String id;
-    protected AulaModel aula;
-    protected InstrutorModel instrutor;
-    protected List<AlunoModel> alunos;
-    protected LocalDate dataHoraGeracao;
+    private String id;
+    private AulaModel aula;
+    private InstrutorModel instrutor;
+    private List<AlunoModel> alunos;
+    private LocalDate dataHoraGeracao;
 
     public RelatorioModel() {}
 
